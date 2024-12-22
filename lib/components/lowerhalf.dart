@@ -6,7 +6,7 @@ class LowerHalf extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 440,
+      height: 250,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12), color: Colors.black),
     );

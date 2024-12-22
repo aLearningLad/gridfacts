@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gridfacts/components/appbar.dart';
 import 'package:gridfacts/components/lowerhalf.dart';
+import 'package:gridfacts/components/scorekeeper.dart';
 import 'package:gridfacts/components/timekeeper.dart';
 import 'package:gridfacts/components/tophalf.dart';
 
@@ -14,7 +15,7 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10),
         child: Column(
-          children: [TopHalf(), LowerHalf(), TimeKeeper()],
+          children: [TopHalf(), LowerHalf(), TimeKeeper(), ScoreKeeper()],
         ),
       ),
     );
