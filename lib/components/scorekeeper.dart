@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ScoreKeeper extends StatelessWidget {
-  const ScoreKeeper({super.key});
+  const ScoreKeeper(
+      {super.key, required this.score, required this.increaseScore});
+
+  final int score;
+  final VoidCallback increaseScore;
 
   @override
   Widget build(BuildContext context) {

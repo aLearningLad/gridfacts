@@ -5,8 +5,21 @@ import 'package:gridfacts/components/scorekeeper.dart';
 import 'package:gridfacts/components/timekeeper.dart';
 import 'package:gridfacts/components/tophalf.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _score = 0;
+
+  void increaseScore() {
+    setState(() {
+      _score++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +31,8 @@ class Home extends StatelessWidget {
           children: [
             TopHalf(),
             LowerHalf(),
-            // TimeKeeper(),
-            // ScoreKeeper()
+            TimeKeeper(),
+            ScoreKeeper(score: _score, increaseScore: increaseScore)
           ],
         ),
       ),

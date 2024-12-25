@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 
-class LowerHalf extends StatefulWidget {
+class LowerHalf extends StatelessWidget {
   const LowerHalf({super.key});
 
   @override
-  State<LowerHalf> createState() => _LowerHalfState();
-}
-
-class _LowerHalfState extends State<LowerHalf> {
-  @override
   Widget build(BuildContext context) {
+    int currentQuestion = 0;
+
     final List<Map<String, String>> questionsList = [
       {"Who Monaco GP most times?": "Ayrton!"},
       {"Most race wins?": "Lewis!"},
