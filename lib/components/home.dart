@@ -15,7 +15,12 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10),
         child: Column(
-          children: [TopHalf(), LowerHalf(), TimeKeeper(), ScoreKeeper()],
+          children: [
+            TopHalf(),
+            LowerHalf(),
+            // TimeKeeper(),
+            // ScoreKeeper()
+          ],
         ),
       ),
     );
