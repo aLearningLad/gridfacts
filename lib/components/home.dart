@@ -4,6 +4,7 @@ import 'package:gridfacts/components/lowerhalf.dart';
 import 'package:gridfacts/components/scorekeeper.dart';
 import 'package:gridfacts/components/timekeeper.dart';
 import 'package:gridfacts/components/tophalf.dart';
+import 'dart:math';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -14,12 +15,29 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _score = 0;
+  int _questionIndex = 0;
 
-  void increaseScore() {
-    setState(() {
-      _score++;
-    });
+  @override
+  void initState() {
+    super.initState();
+    Random random = Random();
+    double randomIndex = random.nextDouble() * 4;
+    _questionIndex = randomIndex.floor();
   }
+
+  // increase the score
+  void increaseScore() {
+    if (_score < 12) {
+      setState(() {
+        _score++;
+      });
+    } else if (_score == 12) {
+      _score = 0;
+    }
+  }
+
+// skip to next question
+  void skipToNext() {}
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +48,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             TopHalf(),
-            LowerHalf(),
+            LowerHalf(questionIndex: _questionIndex),
             TimeKeeper(),
             ScoreKeeper(score: _score, increaseScore: increaseScore)
           ],

@@ -44,7 +44,7 @@ class ScoreKeeper extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              "7",
+                              "$score",
                               style: TextStyle(fontSize: 46),
                             ),
                             Text(
@@ -53,7 +53,10 @@ class ScoreKeeper extends StatelessWidget {
                             )
                           ],
                         ),
-                        Text("Correct so far, this represents roughly 67%")
+                        // Text("Correct so far, this represents roughly 67%")
+                        ElevatedButton(
+                            onPressed: increaseScore,
+                            child: Text('click this!'))
                       ],
                     ),
                   ),

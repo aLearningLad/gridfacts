@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class LowerHalf extends StatelessWidget {
-  const LowerHalf({super.key});
+  const LowerHalf({super.key, required this.questionIndex});
+
+  final int questionIndex;
 
   @override
   Widget build(BuildContext context) {
-    int currentQuestion = 0;
-
     final List<Map<String, String>> questionsList = [
       {"Who Monaco GP most times?": "Ayrton!"},
       {"Most race wins?": "Lewis!"},
@@ -14,9 +14,21 @@ class LowerHalf extends StatelessWidget {
       {"Who is a snake in the paddock?": "Toto Wolff"},
     ];
 
+    final List<String> falseAnswers = [
+      "Ayrton Senna",
+      "Lewis Hamilton",
+      "Max Verstappen",
+      "Toto Wolf",
+      "Heikki Kovaleinen",
+      "Schumi",
+      "Kimi",
+      "Isak Hadjar",
+      "Brad Pitt"
+    ];
+
     return Container(
         padding: EdgeInsets.all(10),
-        height: 300,
+        height: 250,
         width: double.infinity,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -37,7 +49,7 @@ class LowerHalf extends StatelessWidget {
               ],
             ),
             Container(
-              height: 225,
+              height: 190,
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -45,7 +57,7 @@ class LowerHalf extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times Which driver won Monaco the most times",
+                      questionsList[questionIndex].keys.first,
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16),
                     ),
