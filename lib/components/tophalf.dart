@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class TopHalf extends StatelessWidget {
-  const TopHalf({super.key});
+  const TopHalf(
+      {super.key, required this.questionsList, required this.questionIndex});
+
+  final VoidCallback skipToNext;
+  final List<Map<String, String>> questionsList;
+  final int questionIndex;
 
   @override
   Widget build(BuildContext context) {

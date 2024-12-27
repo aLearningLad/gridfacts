@@ -14,17 +14,17 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               spacing: 5,
               children: [
-                Text("Thato"),
+                Text("Grid Facts"),
                 Container(
                     padding: EdgeInsets.all(5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        color: Colors.black),
+                        color: Colors.pinkAccent),
                     alignment: Alignment.center,
                     child: Icon(
-                      Icons.check,
+                      Icons.flag,
                       color: Colors.white,
-                      size: 15,
+                      size: 18,
                     ))
               ]),
           Container(
